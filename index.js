@@ -37,8 +37,7 @@ const game = () => {
         const computerChoice = computerOptions[computerNumber];
 
         setTimeout(() => {
-            
-          //Here is where we call compare hands
+           
           compareHands(this.textContent, computerChoice);
           //Update Images
           playerHand.src = `./assets/${this.textContent}.png`;
@@ -63,9 +62,9 @@ const game = () => {
   };
 
   const compareHands = (playerChoice, computerChoice) => {
-    //Update Text
+    
     const winner = document.querySelector(".winner");
-    //Checking for a tie
+   
     if (playerChoice === computerChoice) {
       winner.textContent = "It's a TIE";
       return;

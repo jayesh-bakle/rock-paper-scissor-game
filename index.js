@@ -49,8 +49,8 @@ const game = () => {
         computerHand.src = './assets/rock.png';
         sound.play();
         
-        playerHand.style.animation = "shakePlayer 2s ease";
-        computerHand.style.animation = "shakeComputer 2s ease";
+        playerHand.style.animation = "shakePlayer 4s ease";
+        computerHand.style.animation = "shakeComputer 4s ease";
       });
     });
   };
@@ -119,5 +119,4 @@ const game = () => {
   playMatch();
 };
 
-//start the game function
 game();

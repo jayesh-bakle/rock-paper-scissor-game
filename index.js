@@ -1,9 +1,9 @@
 const game = () => {
-  let pScore = 0; // player score
-  let cScore = 0; // computer score
+  let pScore = 0; 
+  let cScore = 0; 
   const sound = new Audio('./assets/game.mp3');
 
-  // beginning of the game.
+ 
   const startGame = () => {
     const playBtn = document.querySelector(".intro button");
     const introScreen = document.querySelector(".intro");
@@ -15,7 +15,7 @@ const game = () => {
       match.classList.add("fadeIn");
     });
   };
-  //Play Match
+ 
   const playMatch = () => {
     const options = document.querySelectorAll(".options button");
     const playerHand = document.querySelector(".player-hand");
@@ -27,12 +27,12 @@ const game = () => {
         this.style.animation = "";
       });
     });
-    //Computer Options
+   
     const computerOptions = ["rock", "paper", "scissors"];
 
     options.forEach((option) => {
       option.addEventListener("click", function () {
-        //Computer Choice
+       
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
 
@@ -44,7 +44,7 @@ const game = () => {
           playerHand.src = `./assets/${this.textContent}.png`;
           computerHand.src = `./assets/${computerChoice}.png`;
         }, 4000);
-        //Animation
+        
         playerHand.src = './assets/rock.png';
         computerHand.src = './assets/rock.png';
         sound.play();
@@ -70,7 +70,7 @@ const game = () => {
       winner.textContent = "It's a TIE";
       return;
     }
-    //Check for Rock
+   
     if (playerChoice === "rock") {
       if (computerChoice === "scissors") {
         winner.textContent = "You Won!";
@@ -84,7 +84,7 @@ const game = () => {
         return;
       }
     }
-    //Check for Paper
+   
     if (playerChoice === "paper") {
       if (computerChoice === "scissors") {
         winner.textContent = "Computer Wins!";
@@ -98,7 +98,7 @@ const game = () => {
         return;
       }
     }
-    //Check for Scissors
+    
     if (playerChoice === "scissors") {
       if (computerChoice === "rock") {
         winner.textContent = "Computer Wins!";
@@ -114,7 +114,7 @@ const game = () => {
     }
   };
 
-  //Is call all the inner function
+
   startGame();
   playMatch();
 };
